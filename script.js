@@ -1,21 +1,21 @@
-function addProduct() {
+function adicionarProduto() {
     // Obtém os valores do formulário
-    let productName = document.getElementById("productName").value;
-    let productPrice = document.getElementById("productPrice").value;
+    let nomeProduto = document.getElementById("nomeProduto").value;
+    let precoProduto = document.getElementById("precoProduto").value;
 
     // Cria um objeto produto com os valores do formulário
-    let product = {
-        name: productName,
-        price: productPrice
+    let produto = {
+        nome: nomeProduto,
+        preco: precoProduto
     };
 
     // Envia a requisição POST para o servidor
-    fetch('/addProduct', {
+    fetch('/adicionarProduto', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify(product)
+        body: JSON.stringify(produto)
     })
     .then(response => {
         if (response.ok) {
